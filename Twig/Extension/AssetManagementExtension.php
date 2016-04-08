@@ -19,8 +19,8 @@ class AssetManagementExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'add_assets' => new \Twig_Function_Method($this, 'add'),
-            'render_assets' => new \Twig_Function_Method($this, 'render', array('is_safe' => array('html'))),
+            new \Twig_SimpleFunction('add_assets', array($this, 'add')),
+            new \Twig_SimpleFunction('render_assets', array($this, 'render'), array('is_safe' => array('html'))),
         );
     }
 
